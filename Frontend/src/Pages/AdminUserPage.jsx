@@ -16,7 +16,7 @@ const AdminUserPage = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/api/get-all-user"
+        `${import.meta.env.VITE_BASE_URL}/api/get-all-user`
       );
       setUsers(response.data.data);
     } catch (err) {
@@ -29,7 +29,7 @@ const AdminUserPage = () => {
   const handleDeleteUser = async (userId) => {
     console.log("123", userId);
     try {
-      await axios.delete(`http://localhost:8080/api/delete-user`, {
+      await axios.delete(`${import.meta.env.VITE_BASE_URL}/api/delete-user`, {
         data: { id: userId },
       });
       setUsers(users.filter((user) => user._id !== userId));
@@ -46,7 +46,7 @@ const AdminUserPage = () => {
   const handleUpdateUser = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/update-user`,
+        `${import.meta.env.VITE_BASE_URL}/api/update-user`,
         {
           userId: editUser._id,
           name: editUser.name,

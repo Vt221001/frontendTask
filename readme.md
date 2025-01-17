@@ -33,7 +33,7 @@ Run the following command to install the required dependencies:
 npm install
 
 3. Backend Setup
-Ensure that the backend API is running on http://localhost:8080. If the backend is not set up yet, make sure to create the necessary endpoints or follow the instructions in your backend repository.
+Ensure that the backend API is running on https://frontendtask.vedanshtiwari.tech. If the backend is not set up yet, make sure to create the necessary endpoints or follow the instructions in your backend repository.
 
 4. Run the Application
 After installing dependencies and ensuring the backend is running, start the frontend:

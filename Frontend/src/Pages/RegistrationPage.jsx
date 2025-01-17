@@ -36,7 +36,7 @@ const RegistrationPage = () => {
 
     try {
       // Send the form data to the backend, including the image
-      const response = await axios.post('http://localhost:8080/api/create-user', userData, {
+      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/api/create-user`, userData, {
         headers: {
           'Content-Type': 'multipart/form-data', // Important for file uploads
         },

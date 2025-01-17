@@ -34,7 +34,7 @@ const AdminLoginPage = () => {
       console.log("FormData being sent:", formData); // Logs the input data
 
       const response = await axios.post(
-        "http://localhost:8080/api/admin-login",
+        `${import.meta.env.VITE_BASE_URL}/api/admin-login`,
         formData
       );
 

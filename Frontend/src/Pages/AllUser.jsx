@@ -20,7 +20,7 @@ const AllUser = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/api/get-all-user")
+      .get(`${import.meta.env.VITE_BASE_URL}/api/get-all-user`)
       .then((response) => {
         setUsers(response.data.data);
         setLoading(false);
