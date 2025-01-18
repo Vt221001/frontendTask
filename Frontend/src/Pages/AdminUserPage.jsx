@@ -22,7 +22,7 @@ const AdminUserPage = () => {
       );
       setUsers(response.data.data);
     } catch (err) {
-      setError("Error fetching users");
+      setError(err.response.data.error);
     } finally {
       setLoading(false);
     }
@@ -100,7 +100,7 @@ const AdminUserPage = () => {
           <SyncLoader size={30} color="#865D36" />
         </div>
       ) : error ? (
-        <p className="text-center text-red-500">{error}</p>
+        <p className="text-center text-red-700">{error}</p>
       ) : (
         <div className="overflow-x-auto bg-[#a09a96] shadow-lg rounded-lg">
           <table className="min-w-full table-auto border-collapse">
