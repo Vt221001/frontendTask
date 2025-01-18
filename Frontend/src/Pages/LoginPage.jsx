@@ -7,7 +7,7 @@ import { useAuth } from "../context/AuthProvider";
 import axios from "axios";
 
 const AdminLoginPage = () => {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+  const [formData, setFormData] = useState({ email: "ved@gmail.com", password: "123456" });
   const [response, setResponse] = useState({});
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
