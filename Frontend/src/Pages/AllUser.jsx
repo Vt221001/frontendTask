@@ -95,7 +95,7 @@ const AllUser = () => {
         {filteredUsers.map((user) => (
           <div
             key={user._id}
-            className="bg-[#AC896B] p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 ease-in-out transform hover:-translate-y-2"
+            className="bg-[#e4c5a9] p-4 md:p-6 rounded-lg shadow-md hover:shadow-xl transition-transform duration-300 ease-in-out transform hover:-translate-y-2"
           >
             <div className="flex justify-center">
               <img
