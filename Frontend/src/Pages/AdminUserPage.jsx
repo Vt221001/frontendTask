@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
+import SyncLoader from "react-spinners/SyncLoader";
+import { toast } from "react-toastify";
 
 const AdminUserPage = () => {
   const [users, setUsers] = useState([]);
@@ -32,8 +34,10 @@ const AdminUserPage = () => {
         data: { id: userId },
       });
       setUsers(users.filter((user) => user._id !== userId));
+      toast.success("User deleted successfully!");
     } catch (err) {
       setError("Error deleting user");
+      toast.error("Error deleting user");
     }
   };
 
@@ -58,10 +62,12 @@ const AdminUserPage = () => {
           user._id === editUser._id ? response.data.data : user
         )
       );
+      toast.success("User updated successfully!");
       setIsEditing(false);
       setEditUser(null);
     } catch (err) {
       setError("Error updating user");
+      toast.error("Error updating user");
     }
   };
 
@@ -90,7 +96,9 @@ const AdminUserPage = () => {
       </h1>
 
       {loading ? (
-        <p className="text-center text-gray-500">Loading users...</p>
+        <div className="flex justify-center items-center h-[70vh]">
+          <SyncLoader size={30} color="#865D36" />
+        </div>
       ) : error ? (
         <p className="text-center text-red-500">{error}</p>
       ) : (
