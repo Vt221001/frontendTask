@@ -9,6 +9,7 @@ const Input = ({ labelName, type = "text", placeholder = "", ...props }) => {
       <input
         type={type}
         placeholder={placeholder}
+        required
         className="bg-gray-200 mt-2 text-sm w-full h-10 rounded-md px-3 text-gray-900 border-2 border-[#93785B] focus:border-[#3e362e] outline-none"
         {...props}
       />

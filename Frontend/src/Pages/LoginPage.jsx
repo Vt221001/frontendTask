@@ -19,15 +19,12 @@ const AdminLoginPage = () => {
     setFormData((prevData) => ({ ...prevData, [id]: value }));
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setError(""); // Reset error state
-  //   const res = await postApi("adminLogin", formData, "", setResponse);
-  //   console.log("jbqdwkj", response);
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (formData.email.trim() === "" || formData.password.trim() === "") {
+      toast.success("Please fill all the fields");
+      return;
+    }
     setLoading(true);
 
     try {
@@ -50,12 +47,7 @@ const AdminLoginPage = () => {
       login(accessToken, refreshToken, admin);
       toast.success("Login successful!");
     } catch (error) {
-      console.error("Error details:", error);
-      const errorMessage =
-        error.response?.data?.message ||
-        error.message ||
-        "Something went wrong!";
-      toast.error(errorMessage);
+      toast.error("Invalid credentials. Please try again.");
     } finally {
       setLoading(false);
       console.log("API call finished.");
@@ -76,6 +68,7 @@ const AdminLoginPage = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter your username"
+              required
             />
           </div>
 
@@ -87,6 +80,7 @@ const AdminLoginPage = () => {
               value={formData.password}
               onChange={handleChange}
               placeholder="Enter your password"
+              required
             />
           </div>
           <FormButton name="Login" onClick={handleSubmit} />

@@ -18,12 +18,7 @@ const App = () => {
           <ToastContainer />
           <Routes>
             <Route path="/admin-login" element={<AdminLoginPage />} />
-            <Route
-              path="/"
-              element={
-                  <AllUser />
-              }
-            />
+            <Route path="/" element={<AllUser />} />
             <Route
               path="/user-register"
               element={
@@ -40,7 +35,7 @@ const App = () => {
                 </PrivateRoute>
               }
             />
-            <Route path="*" element={<NotFoundErrorPage/>} />
+            <Route path="*" element={<NotFoundErrorPage />} />
           </Routes>
         </div>
       </AuthProvider>
