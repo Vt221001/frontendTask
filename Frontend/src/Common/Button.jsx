@@ -13,7 +13,7 @@ const FormButton = ({ name, onClick }) => {
     <div className="flex justify-end">
       <button
         type="submit"
-        className="bg-[#7367F0] text-white font-semibold py-2 px-6 rounded-md hover:bg-[#4C51BF] transition duration-200 ease-in-out shadow-md"
+        className="bg-[#3f2e1d] text-white font-semibold py-2 px-6 rounded-md hover:bg-[#724d2a] transition duration-200 ease-in-out shadow-md"
         onClick={handleClick}
         disabled={loading}
       >

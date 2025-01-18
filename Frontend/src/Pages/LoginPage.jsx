@@ -65,13 +65,13 @@ const AdminLoginPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-[#865D36] to-[#A69080] bg-gray-100">
       <ToastContainer />
-      <div className="bg-white p-6 rounded-md shadow-md w-full max-w-sm">
+      <div className="bg-[#A69080] p-6 rounded-md shadow-md w-full max-w-sm">
         <h2 className="text-2xl font-semibold text-center mb-4">Admin Login</h2>
         {error && <p className="text-red-500 text-sm text-center">{error}</p>}
         <form>
-          <div className="mb-4">
+          <div className="mb-4 ">
             <Input
               labelName="Email"
               id="email"
