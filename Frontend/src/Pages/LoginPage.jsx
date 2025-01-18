@@ -31,7 +31,7 @@ const AdminLoginPage = () => {
     setLoading(true);
 
     try {
-      console.log("FormData being sent:", formData); // Logs the input data
+      console.log("FormData being sent:", formData);
 
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/api/admin-login`,
@@ -39,20 +39,18 @@ const AdminLoginPage = () => {
       );
 
       console.log("API Response received:", response);
-      console.log("API Response data:", response.data.data); // Logs only the `data` property
+      console.log("API Response data:", response.data.data);
 
       const { accessToken, refreshToken, admin } = response.data.data;
 
-      // Validate that the required fields are present in the response
       if (!accessToken || !refreshToken || !admin || !admin.name) {
         throw new Error("Invalid user data received.");
       }
 
-      // Use the login function from AuthProvider
       login(accessToken, refreshToken, admin);
       toast.success("Login successful!");
     } catch (error) {
-      console.error("Error details:", error); // Logs the error details
+      console.error("Error details:", error);
       const errorMessage =
         error.response?.data?.message ||
         error.message ||
@@ -60,7 +58,7 @@ const AdminLoginPage = () => {
       toast.error(errorMessage);
     } finally {
       setLoading(false);
-      console.log("API call finished."); // Indicates the API call process is done
+      console.log("API call finished.");
     }
   };
 
