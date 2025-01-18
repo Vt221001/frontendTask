@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const RegistrationPage = () => {
   const [name, setName] = useState("");
@@ -42,8 +43,20 @@ const RegistrationPage = () => {
         }
       );
       setSuccess("User created successfully!");
+      toast.success("User created successfully!");
+      
+      setName("");
+      setEmail("");
+      setDescription("");
+      setAddress("");
+      setHobby("");
+      setLocationLat("");
+      setLocationLng("");
+      setImage(null);
+
       setError(null);
     } catch (error) {
+      toast.error("something went wrong");
       setError("Error creating user");
       setSuccess(null);
     }
@@ -121,7 +134,7 @@ const RegistrationPage = () => {
             },
           ].map(({ id, label, type, value, onChange, placeholder }) => (
             <div key={id} className="flex flex-col">
-              <label htmlFor={id} className="text-sm font-medium text-gray-700">
+              <label htmlFor={id} className="text-sm font-medium ">
                 {label}
               </label>
               <input
@@ -129,7 +142,7 @@ const RegistrationPage = () => {
                 id={id}
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
-                className="mt-1 p-2 text-sm border border-gray-300 rounded focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                className="mt-1 p-2 text-sm border bg-[#e7e0da] border-gray-300 rounded focus:ring-1 focus:ring-[#3e362e] focus:outline-none"
                 placeholder={placeholder}
                 required
               />
@@ -138,10 +151,7 @@ const RegistrationPage = () => {
 
           {/* File Input */}
           <div className="flex flex-col">
-            <label
-              htmlFor="photo"
-              className="text-sm font-medium text-gray-700"
-            >
+            <label htmlFor="photo" className="text-sm font-medium ">
               Profile Picture
             </label>
             <input
