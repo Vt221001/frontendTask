@@ -25,8 +25,8 @@ A React application that displays a list of users fetched from a backend API and
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/HemantMedhsia/BynryProject.git
-cd BynryProject
+git clone 
+cd frontendTask
 
 2. Install dependencies
 Run the following command to install the required dependencies:
@@ -38,7 +38,7 @@ Ensure that the backend API is running on https://frontendtask.vedanshtiwari.tec
 4. Run the Application
 After installing dependencies and ensuring the backend is running, start the frontend:
 npm run dev
-(This will start the development server on http://localhost:3000.)
+(This will start the development server on http://localhost:5173.)
 
 6. View User Details and Location
 Click on any user to open a modal displaying more detailed information, including their address and a map showing their location.
